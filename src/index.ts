@@ -5,7 +5,11 @@ window.addEventListener('DOMContentLoaded', main);
 
 async function main() {
   const targetUrl = getTargetUrl();
-  await drawQRCode(targetUrl);
+  try {
+    await drawQRCode(targetUrl);
+  } catch (e) {
+    showError(e);
+  }
 }
 
 function getTargetUrl() {
@@ -18,4 +22,10 @@ async function drawQRCode(data: string) {
   await QRCode.toCanvas(canvas, data, {
     width: Math.round(0.3 * window.innerWidth)
   });
+}
+
+function showError(e: Error | string) {
+  const errorEl = document.getElementById('error')!;
+  errorEl.textContent = e instanceof Error ? e.message : String(e);
+  errorEl.style.display = 'block';
 }
