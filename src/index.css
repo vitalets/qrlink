@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+  font-family: "SB Sans Text", sans-serif;
+  color: rgba(255,255,255,0.96);
+  background: rgb(8, 8, 8);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+#title {
+  text-align: center;
+  margin: 0;
+}
+
+#close {
+  background: rgb(36, 178, 62);
+  color: rgba(255,255,255,0.96);
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  font-size: 20px;
+  width: 30vw;
+}
